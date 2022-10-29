@@ -1,0 +1,43 @@
+{{define "title"}}
+Ubah Task
+{{end}}
+
+{{define "css"}}
+{{end}}
+
+{{define "script"}}
+
+{{end}}
+
+{{define "main"}}
+<form action="/update/{{.ID}}" method="post">
+    <h1 class="display-6">Ubah Task</h1>
+
+    <div class="row mb-2">
+        <div class="col-2" style="text-align: end">Task Detail</div>
+        <div class="col-6">
+            <textarea name="content" placeholder="Masukkan Task" class="form-control">{{.Note.Content}}</textarea>
+        </div>
+    </div>
+    <div class="row mb-2">
+        <div class="col-2" style="text-align: end">Assignee</div>
+        <div class="col-6">
+            <input class="form-control" type="text" name="assignee" placeholder="Masukkan Penerima" value="{{.Note.Assignee}}">        
+        </div>
+    </div> 
+    <div class="row mb-2">
+        <div class="col-2" style="text-align: end">Deadline</div>
+        <div class="col-6">
+            <input class="form-control" type="date" name="date" value="{{.Note.Date}}">        
+        </div>
+    </div> 
+    <div class="row mb-2">
+        <div class="col-6 offset-2">
+            <button class="btn btn-outline-primary" type="submit">Submit</button>        
+        </div>
+    </div> 
+
+    
+</form>
+    
+{{end}}
